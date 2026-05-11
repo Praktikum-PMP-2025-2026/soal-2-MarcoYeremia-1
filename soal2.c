@@ -26,9 +26,11 @@ void execute(int *a, int *b, int M, int N){
     int verdict = 0;
     for(int i = 0;i <= M - 1;i++){
         for(int j = i+ 1; j<= M - 1;j++){
-            if((dependencies[i] == dependencies[j]) || dependencies[i] == 100){
-                verdict++;
-                break;
+            if(dependencies[i] == 100){   
+                if(dependencies[i] == dependencies[j] ){
+                    verdict++;
+                    break;
+                }
             }
         }
     }
@@ -39,6 +41,8 @@ void execute(int *a, int *b, int M, int N){
     else{
         printf("BISA");
     }
+
+
 }
 
 int main(){
