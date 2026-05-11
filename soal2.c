@@ -6,16 +6,21 @@
 
 void execute(int *a, int *b, int M, int N){
 
-    int gamungkin = 1000;
+    
 
     int dependencies[M];
+
+    for(int i = 0;i <= M -1; i++){
+        dependencies[i] = 100;
+    }
+
     for(int i = 0;i <= M - 1;i++){
         for(int j = 0; j<= M - 1;j++){
             if(b[i] == a[j]){
                 dependencies[i] = b[j];
             }  
         }
-        dependencies[i] = gamungkin;
+        
     }
 
 
