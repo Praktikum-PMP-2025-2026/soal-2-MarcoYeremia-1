@@ -64,19 +64,28 @@ int main(){
             if(a[0] = b[0]){
                 printf("TIDAK BISA");
             }
-        }
-            else{
-            int count = 0;
-            for(int i = 0; i <= M - 1; i++){
-                if((a[M] || b[M]) <= N -1){
-                    count++;
-                }
-            }
+        
             
-            if(count != 0){
-                execute(a, b, M, N);
-                }
+            else{
+                printf("BISA");
+            }
         }
+
+        else{
+
+        int count = 0;
+        for(int i = 0; i <= M - 1; i++){
+            if((a[M] || b[M]) <= N -1){
+                count++;
+            }
+        }
+        
+        if(count != 0){
+            execute(a, b, M, N);
+            }
     }
 }
+
+}
+
     
