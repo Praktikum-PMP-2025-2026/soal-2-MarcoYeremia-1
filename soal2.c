@@ -13,10 +13,9 @@ void execute(int *a, int *b, int M, int N){
         for(int j = 0; j<= M - 1;j++){
             if(b[i] == a[j]){
                 dependencies[i] = b[j];
-            }
-            dependencies[i] = gamungkin;
-        
+            }  
         }
+        dependencies[i] = gamungkin;
     }
 
 
