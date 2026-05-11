@@ -2,7 +2,11 @@
 #include <stdlib.h>
 
 
+
+
 void execute(int *a, int *b, int M, int N){
+
+    int gamungkin = 1000;
 
     int dependencies[M];
     for(int i = 0;i <= M - 1;i++){
@@ -10,7 +14,14 @@ void execute(int *a, int *b, int M, int N){
             if(b[i] == a[j]){
                 dependencies[i] = b[j];
             }
+            dependencies[i] = gamungkin;
+        
         }
+    }
+
+
+    for(int i = 0; i <= M-1;i++){
+        printf("%d ", dependencies[i]);
     }
 
     int verdict = 0;
@@ -23,8 +34,6 @@ void execute(int *a, int *b, int M, int N){
         }
     }
 
-    
-
     if(verdict == 0 ){
         printf("TIDAK BISA");
     }
@@ -36,27 +45,32 @@ void execute(int *a, int *b, int M, int N){
 int main(){
     int N, M;
 
-    scanf("%d ", &N);
-    scanf("%d ", &M);
+    scanf("%d %d", &N, &M);
 
-    
-
-    int a[M];
-    int b[M];
-    
-    for(int i = 0; i <= M - 1; i++){
-        scanf("%d %d", &a[i], &b[i]);
+    if(M == 0 || M == 1){
+        printf("BISA");
     }
+    else{
 
-    int count = 0;
-    for(int i = 0; i <= M - 1; i++){
-        if((a[M] || b[M]) <= N -1){
-            count++;
+        int a[M];
+        int b[M];
+        
+
+
+        for(int i = 0; i <= M - 1; i++){
+            scanf("%d %d", &a[i], &b[i]);
         }
-    }
-    
-    if(count != 0){
-    execute(a, b, M, N);
+
+        int count = 0;
+        for(int i = 0; i <= M - 1; i++){
+            if((a[M] || b[M]) <= N -1){
+                count++;
+            }
+        }
+        
+        if(count != 0){
+        execute(a, b, M, N);
+        }
     }
 }
     
