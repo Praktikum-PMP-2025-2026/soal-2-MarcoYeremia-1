@@ -23,10 +23,14 @@ void execute(int *a, int *b, int M, int N){
         
     }
 
+    for(int i = 0;i <= M -1;i++){
+        printf("%d ", dependencies[i]);
+    }
+
     int verdict = 0;
     for(int i = 0;i <= M - 1;i++){
         for(int j = i+ 1; j<= M - 1;j++){
-            if(dependencies[i] == dependencies[j]){
+            if((dependencies[i] == dependencies[j]) || dependencies[i] == 100){
                 verdict++;
                 break;
             }
@@ -46,7 +50,7 @@ int main(){
 
     scanf("%d %d", &N, &M);
 
-    if(M == 0 || M == 1){
+    if(M == 0){
         printf("BISA");
     }
     else{
@@ -60,15 +64,22 @@ int main(){
             scanf("%d %d", &a[i], &b[i]);
         }
 
-        int count = 0;
-        for(int i = 0; i <= M - 1; i++){
-            if((a[M] || b[M]) <= N -1){
-                count++;
+        if(M == 1){
+            if(a[0] = b[0]){
+                printf("TIDAK BISA");
             }
         }
-        
-        if(count != 0){
-        execute(a, b, M, N);
+            else{
+            int count = 0;
+            for(int i = 0; i <= M - 1; i++){
+                if((a[M] || b[M]) <= N -1){
+                    count++;
+                }
+            }
+            
+            if(count != 0){
+                execute(a, b, M, N);
+                }
         }
     }
 }
