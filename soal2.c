@@ -23,10 +23,6 @@ void execute(int *a, int *b, int M, int N){
         
     }
 
-    for(int i = 0;i <= M -1;i++){
-        printf("%d ", dependencies[i]);
-    }
-
     int verdict = 0;
     for(int i = 0;i <= M - 1;i++){
         for(int j = i+ 1; j<= M - 1;j++){
